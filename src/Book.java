@@ -1,26 +1,37 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Book {
     private String title;
-    private StringBuilder content;
+    private List<Author> authors = new ArrayList<>();
+    private List<Chapter> chapters = new ArrayList<>();
 
     public Book(String title) {
         this.title = title;
-        this.content = new StringBuilder();
     }
 
-    public void createNewParagraph(String paragraph) {
-        this.content.append(paragraph + "\n");
+    public void addAuthor(Author author) {
+        this.authors.add(author);
     }
 
-    public void createNewImage(String img) {
-        this.content.append(img + "\n");
+    public int createChapter(String chapterName) {
+        this.chapters.add(new Chapter(chapterName));
+        return this.chapters.size() - 1;
     }
 
-    public void createNewTable(String tbl) {
-        this.content.append(tbl + "\n");
+    public Chapter getChapter(int index) {
+        return chapters.get(index);
     }
 
     public void print() {
-        System.out.println("Title\n----------\n" + this.title + "\n----------\n");
-        System.out.println("Content\n----------\n" + this.content);
+        System.out.println("Title\n----------\n" + this.title + "\n----------");
+        System.out.println("Written By\n----------");
+        this.authors.forEach(a -> {
+            a.print();
+        });
+        System.out.println("----------\nContent\n----------");
+        chapters.forEach(c -> {
+            c.print();
+        });
     }
 }
