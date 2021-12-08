@@ -36,6 +36,12 @@ public class BookStatistics implements Visitor {
         this.tables++;
     }
 
+    @Override
+    public void visit(TableOfContents toc) {
+        // TODO Auto-generated method stub
+
+    }
+
     public void printStatistics() {
         System.out.println("Book Statisticts:");
         System.out.println("*** Number of images : " + this.images);

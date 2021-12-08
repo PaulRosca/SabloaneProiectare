@@ -10,4 +10,7 @@ public interface Visitor {
     public void visit(ImageProxy imageProxy);
 
     public void visit(Table table);
+
+    public void visit(TableOfContents toc);
+
 }

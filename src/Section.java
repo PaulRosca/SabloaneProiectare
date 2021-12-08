@@ -33,8 +33,13 @@ public class Section implements Element {
         return this.components.get(i);
     }
 
+    public String getTitle() {
+        return this.title;
+    }
+
     @Override
     public void accept(Visitor visitor) {
+        visitor.visit(this);
         components.forEach(c -> c.accept(visitor));
     }
 

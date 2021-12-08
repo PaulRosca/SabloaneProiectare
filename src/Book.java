@@ -18,6 +18,9 @@ public class Book extends Section {
             a.print();
         });
         System.out.println();
+        GenerateToC toc = new GenerateToC();
+        this.accept(toc);
+        toc.getToC().render();
         super.render();
     }
 

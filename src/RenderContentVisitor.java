@@ -30,4 +30,9 @@ public class RenderContentVisitor implements Visitor {
         table.render();
     }
 
+    @Override
+    public void visit(TableOfContents toc) {
+        toc.render();
+    }
+
 }
