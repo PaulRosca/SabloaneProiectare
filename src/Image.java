@@ -12,7 +12,7 @@ public class Image implements Element {
         }
     }
 
-    public void print() {
+    public void render() {
         System.out.println("Image with name: " + this.imageName);
     }
 
@@ -32,5 +32,10 @@ public class Image implements Element {
     public Element get(int i) {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }

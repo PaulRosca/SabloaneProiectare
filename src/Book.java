@@ -12,12 +12,13 @@ public class Book extends Section {
         this.authors.add(author);
     }
 
-    public void print() {
+    public void render() {
         System.out.println("Authors :");
         this.authors.forEach(a -> {
             a.print();
         });
         System.out.println();
-        super.print();
+        super.render();
     }
+
 }

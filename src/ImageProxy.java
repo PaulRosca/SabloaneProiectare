@@ -15,8 +15,8 @@ public class ImageProxy implements Element {
     }
 
     @Override
-    public void print() {
-        loadImage().print();
+    public void render() {
+        loadImage().render();
     }
 
     @Override
@@ -35,6 +35,11 @@ public class ImageProxy implements Element {
     public Element get(int i) {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
 }

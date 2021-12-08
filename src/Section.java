@@ -11,10 +11,10 @@ public class Section implements Element {
     }
 
     @Override
-    public void print() {
+    public void render() {
         System.out.println(this.title);
         this.components.forEach(c -> {
-            c.print();
+            c.render();
         });
     }
 
@@ -31,6 +31,11 @@ public class Section implements Element {
     @Override
     public Element get(int i) {
         return this.components.get(i);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        components.forEach(c -> c.accept(visitor));
     }
 
 }

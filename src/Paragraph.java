@@ -6,7 +6,7 @@ public class Paragraph implements Element {
         this.text = text;
     }
 
-    public void print() {
+    public void render() {
         if (this.alignStrategy != null) {
             this.alignStrategy.render(this.text);
         } else {
@@ -34,5 +34,10 @@ public class Paragraph implements Element {
 
     public void setAlignStrategy(AlignStrategy alignStrategy) {
         this.alignStrategy = alignStrategy;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }

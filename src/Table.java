@@ -5,7 +5,7 @@ public class Table implements Element{
         this.title = title;
     }
 
-    public void print() {
+    public void render() {
         System.out.println("Table with title: " + this.title);
     }
 
@@ -25,5 +25,10 @@ public class Table implements Element{
     public Element get(int i) {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }
