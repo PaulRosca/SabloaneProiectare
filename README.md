@@ -5,3 +5,9 @@ all good
 https://github.com/PaulRosca/SabloaneProiectare/commit/49d05f4bfe40e6130c5e63d66635de41d84fc31d
 
 all good
+
+# Feedback lab5 and lab6:
+
+all good
+
+# Proposed grade: 10
